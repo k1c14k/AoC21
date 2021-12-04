@@ -17,8 +17,6 @@ public:
 
     bool check(int draw);
 
-    bool wins();
-
     unsigned long score();
 
     [[maybe_unused]] void display_checks();
@@ -30,6 +28,8 @@ private:
     bool row_wins(int row);
 
     bool column_wins(int column);
+
+    bool wins();
 };
 
 

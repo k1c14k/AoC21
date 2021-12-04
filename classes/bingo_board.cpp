@@ -28,7 +28,7 @@ bool BingoBoard::check(int draw) {
                 checks[i][j] = true;
             }
         }
-    return result;
+    return result && this->wins();
 }
 
 bool BingoBoard::wins() {
