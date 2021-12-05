@@ -3,6 +3,7 @@
 #include <set>
 #include <utility>
 #include <vector>
+#include <algorithm>
 
 unsigned long get_gen_rating(std::vector<unsigned long> data, unsigned long size);
 

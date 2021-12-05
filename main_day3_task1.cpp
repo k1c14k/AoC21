@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 int main() {
     std::ifstream infile("input/input_3_1.txt");
@@ -7,8 +8,8 @@ int main() {
     infile >> entry;
 
     unsigned long entry_length = entry.length();
-    int *zeros = new int[entry_length];
-    int *ones = new int[entry_length];
+    std::vector<int> zeros(entry_length);
+    std::vector<int> ones(entry_length);
 
     do {
         for (std::string::size_type i = 0; i < entry_length; i++) {
@@ -21,7 +22,7 @@ int main() {
 
     for (unsigned long i = 0; i < entry_length; i++) {
         gamma_rate <<= 1;
-        epsilon_rate <<=1;
+        epsilon_rate <<= 1;
         if (ones[i] > zeros[i]) gamma_rate++;
         else epsilon_rate++;
     }
