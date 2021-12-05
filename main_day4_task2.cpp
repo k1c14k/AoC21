@@ -4,6 +4,8 @@
 #include "include/bingo_board.h"
 #include "include/bingo_board_util.h"
 
+long iterate_boards(std::vector<BingoBoard> &boards, int draw);
+
 int main() {
     std::ifstream infile("input/input_4_1.txt");
     std::vector<int> draws = read_draws(infile);
@@ -16,20 +18,30 @@ int main() {
     }
 
     for (auto draw: draws) {
-        auto board = boards.begin();
-        while (board < boards.end()) {
-            if (board->check(draw)) {
-                if (boards.size() > 1) {
-                    boards.erase(board);
-                    continue;
-                } else {
-                    std::cout << board->score() * draw << std::endl;
-                    return 0;
-                }
-            }
-            ++board;
+        auto result = iterate_boards(boards, draw);
+
+        if (result != -1) {
+            std::cout << result << std::endl;
+            return 0;
         }
     }
 
     return 0;
+}
+
+long iterate_boards(std::vector<BingoBoard> &boards, int draw) {
+    auto board = boards.begin();
+    while (board < boards.end()) {
+        if (board->check(draw)) {
+            if (boards.size() > 1) {
+                boards.erase(board);
+                continue;
+            } else {
+                return board->score() * draw;
+            }
+        }
+        ++board;
+    }
+
+    return -1;
 }

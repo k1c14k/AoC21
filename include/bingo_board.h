@@ -17,7 +17,7 @@ public:
 
     bool check(int draw);
 
-    unsigned long score();
+    long score();
 
     [[maybe_unused]] void display_checks();
 

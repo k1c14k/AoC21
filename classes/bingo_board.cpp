@@ -51,8 +51,8 @@ bool BingoBoard::column_wins(int column) {
     return std::all_of(checks, checks + 5, [&column](auto row) { return row[column]; });
 }
 
-unsigned long BingoBoard::score() {
-    unsigned long result = 0;
+long BingoBoard::score() {
+    long result = 0;
 
     for (int i = 0; i < 5; i++)
         for (int j = 0; j < 5; j++)
