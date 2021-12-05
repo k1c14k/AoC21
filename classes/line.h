@@ -9,6 +9,10 @@
 #include <memory>
 #include "point.h"
 
+enum class LineType {
+    vertical, horizontal, diagonal
+};
+
 class Line {
 
 public:
@@ -25,6 +29,11 @@ public:
 private:
     Point *point_a;
     Point *point_b;
+    LineType type;
+
+    bool in_y_range(const Point *pPoint) const;
+
+    bool in_x_range(const Point *pPoint) const;
 };
 
 
