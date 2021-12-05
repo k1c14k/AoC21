@@ -7,8 +7,8 @@
 
 #include <string_view>
 #include <memory>
-#include "../classes/point.h"
-#include "../classes/plane.h"
+#include "point.h"
+#include "plane.h"
 
 std::unique_ptr<Point> parse_point(const std::string_view &str);
 

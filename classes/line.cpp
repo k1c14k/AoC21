@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "line.h"
+#include "../include/line.h"
 
 Line::Line(Point *point_a, Point *point_b) : point_a(point_a), point_b(point_b) {
     if (point_a->get_x() == point_b->get_x())

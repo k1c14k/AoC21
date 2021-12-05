@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include <algorithm>
-#include "plane.h"
-#include "line.h"
+#include "../include/plane.h"
+#include "../include/line.h"
 
 void Plane::add_line(const Line *line, bool include_diagonal) {
     if (include_diagonal || line->get_type() != LineType::diagonal)

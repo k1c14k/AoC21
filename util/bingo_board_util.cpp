@@ -2,7 +2,7 @@
 // Created by marek on 04.12.2021.
 //
 
-#include "bingo_board_util.h"
+#include "../include/bingo_board_util.h"
 
 std::vector<int> *read_board_data(std::ifstream &input) {
     auto *result = new std::vector<int>();

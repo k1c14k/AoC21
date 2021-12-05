@@ -4,7 +4,7 @@
 
 #include <charconv>
 #include <fstream>
-#include "plane_util.h"
+#include "../include/plane_util.h"
 
 std::unique_ptr<Plane> load_plane(std::ifstream &infile, bool include_diagonals) {
     auto plane = std::make_unique<Plane>();

@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "bingo_board.h"
+#include "../include/bingo_board.h"
 
 BingoBoard::BingoBoard(std::vector<int> *data) {
     for (int i = 0; i < 25; i++) {

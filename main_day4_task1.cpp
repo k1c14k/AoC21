@@ -1,8 +1,8 @@
 #include <iostream>
 #include <set>
 #include <vector>
-#include "classes/bingo_board.h"
-#include "util/bingo_board_util.h"
+#include "include/bingo_board.h"
+#include "include/bingo_board_util.h"
 
 int main() {
     std::ifstream infile("input/input_4_1.txt");

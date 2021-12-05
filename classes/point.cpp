@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "point.h"
+#include "../include/point.h"
 
 Point::Point(int x, int y) : x(x), y(y) {}
 
