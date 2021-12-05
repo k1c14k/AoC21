@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 project(AoC21)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(AoC21_day1_task1 main_day1_task1.cpp)
 add_executable(AoC21_day1_task2 main_day1_task2.cpp)

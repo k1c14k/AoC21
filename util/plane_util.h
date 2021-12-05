@@ -12,6 +12,6 @@
 
 std::unique_ptr<Point> parse_point(const std::string_view &str);
 
-std::unique_ptr<Plane> load_plane(std::ifstream &infile);
+std::unique_ptr<Plane> load_plane(std::ifstream &infile, bool include_diagonals);
 
 #endif //AOC21_PLANE_UTIL_H

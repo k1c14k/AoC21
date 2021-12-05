@@ -7,34 +7,17 @@
 
 
 #include <vector>
+#include <map>
 #include "line.h"
 
 class Plane {
 public:
-    void add_line(Line *line);
+    void add_line(const Line *line, bool include_diagonal);
 
-    [[maybe_unused]] void display() const;
-
-    [[nodiscard]] int get_min_x() const;
-
-    [[nodiscard]] int get_min_y() const;
-
-    [[nodiscard]] int get_max_x() const;
-
-    [[nodiscard]] int get_max_y() const;
-
-    bool check_collisions(const Point *pPoint) const;
-
-    bool check_collisions(const Point *pPoint, bool diagonal) const;
+    [[nodiscard]] long count_collisions() const;
 
 private:
-    std::vector<Line *> lines;
-    int min_x = -1;
-    int min_y = -1;
-    int max_x = -1;
-    int max_y = -1;
-
-    void update_range(const Point *pPoint);
+    std::map<std::pair<int, int>, int> point_occurrences;
 };
 
 

@@ -6,7 +6,7 @@
 #include <fstream>
 #include "plane_util.h"
 
-std::unique_ptr<Plane> load_plane(std::ifstream &infile) {
+std::unique_ptr<Plane> load_plane(std::ifstream &infile, bool include_diagonals) {
     auto plane = std::make_unique<Plane>();
     for (std::string line; std::getline(infile, line);) {
         auto point_sep = line.find(" -> ");
@@ -15,7 +15,7 @@ std::unique_ptr<Plane> load_plane(std::ifstream &infile) {
         auto a = parse_point(point_a);
         auto b = parse_point(point_b);
         auto l = std::make_unique<Line>(a.release(), b.release());
-        plane->add_line(l.release());
+        plane->add_line(l.release(), include_diagonals);
     }
     return plane;
 }

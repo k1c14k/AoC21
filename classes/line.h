@@ -7,6 +7,7 @@
 
 
 #include <memory>
+#include <vector>
 #include "point.h"
 
 enum class LineType {
@@ -20,20 +21,14 @@ public:
 
     [[maybe_unused]] void display() const;
 
-    Point *get_a();
+    [[nodiscard]] std::vector<std::pair<int, int>> get_points() const;
 
-    Point *get_b();
-
-    bool point_on(const Point *pPoint, bool diagonal) const;
+    [[nodiscard]] LineType get_type() const;
 
 private:
     Point *point_a;
     Point *point_b;
     LineType type;
-
-    bool in_y_range(const Point *pPoint) const;
-
-    bool in_x_range(const Point *pPoint) const;
 };
 
 

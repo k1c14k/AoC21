@@ -10,7 +10,8 @@ Line::Line(Point *point_a, Point *point_b) : point_a(point_a), point_b(point_b) 
         type = LineType::vertical;
     else if (point_a->get_y() == point_b->get_y())
         type = LineType::horizontal;
-    type = LineType::diagonal;
+    else
+        type = LineType::diagonal;
 }
 
 [[maybe_unused]] void Line::display() const {
@@ -18,37 +19,34 @@ Line::Line(Point *point_a, Point *point_b) : point_a(point_a), point_b(point_b) 
               << point_b->get_y() << ")" << std::endl;
 }
 
-Point *Line::get_a() {
-    return point_a;
-}
+std::vector<std::pair<int, int>> Line::get_points() const {
+    std::vector<std::pair<int, int>> result;
 
-Point *Line::get_b() {
-    return point_b;
-}
-
-bool Line::point_on(const Point *pPoint, bool diagonal) const {
-    if (type == LineType::vertical)
-        return (point_a->get_x() == pPoint->get_x()) &&
-               in_y_range(pPoint);
-    else if (type == LineType::horizontal)
-        return (point_a->get_y() == pPoint->get_y()) &&
-               in_x_range(pPoint);
-    else if (diagonal && type == LineType::diagonal) {
-        auto vx = pPoint->get_x() - point_a->get_x();
-        auto vy = pPoint->get_y() - point_a->get_y();
-        if (abs(vx) == abs(vy) && in_x_range(pPoint) && in_y_range(pPoint))
-            return true;
+    if (type == LineType::vertical) {
+        for (int y = std::min(point_a->get_y(), point_b->get_y());
+             y <= std::max(point_a->get_y(), point_b->get_y()); y++) {
+            result.emplace_back(point_a->get_x(), y);
+        }
+    } else if (type == LineType::horizontal) {
+        for (int x = std::min(point_a->get_x(), point_b->get_x());
+             x <= std::max(point_a->get_x(), point_b->get_x()); x++) {
+            result.emplace_back(x, point_a->get_y());
+        }
+    } else if (type == LineType::diagonal) {
+        auto dx = point_b->get_x() - point_a->get_x() < 0 ? -1 : 1;
+        auto dy = point_b->get_y() - point_a->get_y() < 0 ? -1 : 1;
+        int step = 0;
+        while (true) {
+            result.emplace_back(point_a->get_x() + dx * step, point_a->get_y() + dy * step);
+            if (point_a->get_x() + step * dx == point_b->get_x())
+                break;
+            step++;
+        }
     }
 
-    return false;
+    return result;
 }
 
-bool Line::in_y_range(const Point *pPoint) const {
-    return (std::min(point_a->get_y(), point_b->get_y()) <= pPoint->get_y()) &&
-           (std::max(point_a->get_y(), point_b->get_y()) >= pPoint->get_y());
-}
-
-bool Line::in_x_range(const Point *pPoint) const {
-    return (std::min(point_a->get_x(), point_b->get_x()) <= pPoint->get_x()) &&
-           (std::max(point_a->get_x(), point_b->get_x()) >= pPoint->get_x());
+LineType Line::get_type() const {
+    return type;
 }
