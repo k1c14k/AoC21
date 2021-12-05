@@ -11,7 +11,7 @@
 class BingoBoard {
 
 public:
-    explicit BingoBoard(std::vector<int> *data);
+    explicit BingoBoard(std::vector<int> data);
 
     [[maybe_unused]] void display();
 

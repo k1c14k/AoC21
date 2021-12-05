@@ -10,6 +10,6 @@
 
 std::vector<int> read_draws(std::ifstream &input);
 
-std::vector<int> *read_board_data(std::ifstream &input);
+std::vector<int> read_board_data(std::ifstream &input);
 
 #endif //AOC21_BINGO_BOARD_UTIL_H

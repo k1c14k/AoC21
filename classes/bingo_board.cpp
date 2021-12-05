@@ -3,11 +3,12 @@
 //
 
 #include <iostream>
+#include <algorithm>
 #include "../include/bingo_board.h"
 
-BingoBoard::BingoBoard(std::vector<int> *data) {
+BingoBoard::BingoBoard(std::vector<int> data) {
     for (int i = 0; i < 25; i++) {
-        this->cell[i / 5][i % 5] = data->at(i);
+        this->cell[i / 5][i % 5] = data.at(i);
     }
 }
 

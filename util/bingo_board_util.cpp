@@ -4,18 +4,15 @@
 
 #include "../include/bingo_board_util.h"
 
-std::vector<int> *read_board_data(std::ifstream &input) {
-    auto *result = new std::vector<int>();
+std::vector<int> read_board_data(std::ifstream &input) {
+    std::vector<int> result;
     int line;
 
     for (int i = 0; (i < 25) && (input >> line); i++) {
-        result->push_back(line);
+        result.push_back(line);
     }
 
-    if (result->size() == 25)
-        return result;
-    else
-        return nullptr;
+    return result;
 }
 
 std::vector<int> read_draws(std::ifstream &input) {

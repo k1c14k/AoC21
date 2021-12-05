@@ -9,9 +9,9 @@ int main() {
     std::vector<int> draws = read_draws(infile);
     std::vector<BingoBoard> boards;
 
-    std::vector<int> *boardData = read_board_data(infile);
-    while (boardData) {
-        boards.push_back(*(new BingoBoard(boardData)));
+    std::vector<int> boardData = read_board_data(infile);
+    while (boardData.size() == 25) {
+        boards.emplace_back(boardData);
         boardData = read_board_data(infile);
     }
 
