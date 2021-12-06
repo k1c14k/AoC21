@@ -9,9 +9,9 @@ int main() {
     auto input = read_csi(infile);
 
 
-    auto lanterngish_count = breed_lanternfish(input, 256);
+    auto lanternfish_count = breed_lanternfish(input, 256);
 
-    std::cout << lanterngish_count << std::endl;
+    std::cout << lanternfish_count << std::endl;
 
     return 0;
 }
