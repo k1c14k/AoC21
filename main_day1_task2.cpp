@@ -1,10 +1,11 @@
 #include <iostream>
 #include <fstream>
+#include <array>
 
 int main() {
     std::ifstream infile("input/input_1_1.txt");
     int previous, next, increases = 0;
-    int frame[3];
+    std::array<int, 3> frame{};
     int next_frame = 0;
     infile >> frame[0];
     infile >> frame[1];

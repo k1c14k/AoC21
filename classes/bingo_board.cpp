@@ -44,11 +44,11 @@ bool BingoBoard::wins() {
 }
 
 bool BingoBoard::row_wins(int row) {
-    return std::all_of(checks[row], checks[row] + 5, [](auto b) { return b; });
+    return std::all_of(checks[row].begin(), checks[row].end(), [](auto b) { return b; });
 }
 
 bool BingoBoard::column_wins(int column) {
-    return std::all_of(checks, checks + 5, [&column](auto row) { return row[column]; });
+    return std::all_of(checks.begin(), checks.end(), [&column](auto row) { return row[column]; });
 }
 
 long BingoBoard::score() {

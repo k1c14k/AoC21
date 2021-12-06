@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <array>
 
 class BingoBoard {
 
@@ -22,8 +23,8 @@ public:
     [[maybe_unused]] void display_checks();
 
 private:
-    int cell[5][5]{};
-    bool checks[5][5]{};
+    std::array<std::array<int, 5>, 5> cell{};
+    std::array<std::array<bool, 5>, 5> checks{};
 
     bool row_wins(int row);
 
