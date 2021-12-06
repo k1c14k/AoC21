@@ -12,7 +12,7 @@ BingoBoard::BingoBoard(std::vector<int> data) {
     }
 }
 
-[[maybe_unused]] void BingoBoard::display() {
+[[maybe_unused]] void BingoBoard::display() const {
     for (auto &i: cell) {
         for (int j: i)
             std::cout << j << " ";
@@ -61,7 +61,7 @@ long BingoBoard::score() {
     return result;
 }
 
-[[maybe_unused]] void BingoBoard::display_checks() {
+[[maybe_unused]] void BingoBoard::display_checks() const {
     for (auto &i: checks) {
         for (int j: i)
             std::cout << (j ? "X" : "O") << " ";

@@ -14,13 +14,13 @@ class BingoBoard {
 public:
     explicit BingoBoard(std::vector<int> data);
 
-    [[maybe_unused]] void display();
+    [[maybe_unused]] void display() const;
 
     bool check(int draw);
 
     long score();
 
-    [[maybe_unused]] void display_checks();
+    [[maybe_unused]] void display_checks() const;
 
 private:
     std::array<std::array<int, 5>, 5> cell{};
