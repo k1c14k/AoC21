@@ -20,5 +20,5 @@ unsigned long breed_lanternfish(const std::vector<int> &fishes, int days) {
         lanternfish_counters[8] = new_spawns;
         lanternfish_counters[6] += new_spawns;
     }
-    return std::accumulate(lanternfish_counters.begin(), lanternfish_counters.end(), 0l);
+    return std::accumulate(lanternfish_counters.begin(), lanternfish_counters.end(), 0L);
 }
