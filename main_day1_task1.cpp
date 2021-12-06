@@ -3,7 +3,9 @@
 
 int main() {
     std::ifstream infile("input/input_1_1.txt");
-    int previous, next, increases = 0;
+    int previous;
+    int next;
+    int increases = 0;
     infile >> previous;
 
     while (infile >> next) {

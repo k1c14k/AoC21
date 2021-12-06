@@ -4,7 +4,9 @@
 
 int main() {
     std::ifstream infile("input/input_1_1.txt");
-    int previous, next, increases = 0;
+    int previous;
+    int next;
+    int increases = 0;
     std::array<int, 3> frame{};
     int next_frame = 0;
     infile >> frame[0];

@@ -18,7 +18,8 @@ int main() {
         }
     } while (infile >> entry);
 
-    int gamma_rate = 0, epsilon_rate = 0;
+    int gamma_rate = 0;
+    int epsilon_rate = 0;
 
     for (unsigned long i = 0; i < entry_length; i++) {
         gamma_rate <<= 1;

@@ -32,10 +32,13 @@ int main() {
 }
 
 unsigned long get_rating(std::vector<unsigned long> data, unsigned long word_size, bool lower) {
-    unsigned long a = 0, b = (1 << word_size), r = 1 << (word_size - 1);
+    unsigned long a = 0;
+    unsigned long b = (1 << word_size);
+    unsigned long r = 1 << (word_size - 1);
     std::vector<unsigned long> remaining;
     std::copy(data.begin(), data.end(), std::back_inserter(remaining));
-    std::vector<unsigned long> group_a, group_b;
+    std::vector<unsigned long> group_a;
+    std::vector<unsigned long> group_b;
     while (true) {
         std::copy_if(remaining.begin(), remaining.end(), std::back_inserter(group_a), [&](const auto &item) {
             return (a <= item) && (item < b - r);
