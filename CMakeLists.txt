@@ -15,3 +15,5 @@ add_executable(AoC21_day5_task1 main_day5_task1.cpp classes/point.cpp include/po
 add_executable(AoC21_day5_task2 main_day5_task2.cpp classes/point.cpp include/point.h classes/line.cpp include/line.h classes/plane.cpp include/plane.h util/plane_util.cpp include/plane_util.h)
 add_executable(AoC21_day6_task1 main_day6_task1.cpp util/common_util.cpp include/common_util.h util/lanternfish_common.cpp include/lanternfish_common.h)
 add_executable(AoC21_day6_task2 main_day6_task2.cpp util/common_util.cpp include/common_util.h util/lanternfish_common.cpp include/lanternfish_common.h)
+add_executable(AoC21_day7_task1 main_day7_task1.cpp util/common_util.cpp include/common_util.h util/fuel_util.cpp include/fuel_util.h)
+add_executable(AoC21_day7_task2 main_day7_task2.cpp util/common_util.cpp include/common_util.h util/fuel_util.cpp include/fuel_util.h)
