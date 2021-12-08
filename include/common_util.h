@@ -10,4 +10,6 @@
 
 std::vector<int> read_csi(std::ifstream &input);
 
+std::vector<std::string> parse_sss(std::string input);
+
 #endif //AOC21_COMMON_UTIL_H

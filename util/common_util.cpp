@@ -17,3 +17,15 @@ std::vector<int> read_csi(std::ifstream &input) {
 
     return result;
 }
+
+std::vector<std::string> parse_sss(std::string input) {
+    std::vector<std::string> result;
+    size_t pos;
+    while ((pos = input.find(' ')) != std::string::npos) {
+        result.push_back(input.substr(0, pos));
+        input.erase(0, pos + 1);
+    }
+    result.push_back(input);
+
+    return result;
+}
