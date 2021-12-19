@@ -19,3 +19,5 @@ add_executable(AoC21_day7_task1 main_day7_task1.cpp util/common_util.cpp include
 add_executable(AoC21_day7_task2 main_day7_task2.cpp util/common_util.cpp include/common_util.h util/fuel_util.cpp include/fuel_util.h)
 add_executable(AoC21_day8_task1 main_day8_task1.cpp classes/display.cpp include/display.h util/common_util.cpp include/common_util.h)
 add_executable(AoC21_day8_task2 main_day8_task2.cpp classes/display.cpp include/display.h util/common_util.cpp include/common_util.h)
+add_executable(AoC21_day9_task1 main_day9_task1.cpp classes/height_map.cpp include/height_map.h util/height_map_util.cpp include/height_map_util.h)
+add_executable(AoC21_day9_task2 main_day9_task2.cpp classes/height_map.cpp include/height_map.h util/height_map_util.cpp include/height_map_util.h)
