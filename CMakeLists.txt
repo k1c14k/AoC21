@@ -23,3 +23,5 @@ add_executable(AoC21_day9_task1 main_day9_task1.cpp classes/height_map.cpp inclu
 add_executable(AoC21_day9_task2 main_day9_task2.cpp classes/height_map.cpp include/height_map.h util/height_map_util.cpp include/height_map_util.h)
 add_executable(AoC21_day10_task1 main_day10_task1.cpp classes/chunk_parser.cpp)
 add_executable(AoC21_day10_task2 main_day10_task2.cpp classes/chunk_parser.cpp)
+add_executable(AoC21_day11_task1 main_day11_task1.cpp classes/octopus_map.cpp include/octopus_map.h util/octopus_util.cpp include/octopus_util.h)
+add_executable(AoC21_day11_task2 main_day11_task2.cpp classes/octopus_map.cpp include/octopus_map.h util/octopus_util.cpp include/octopus_util.h)
